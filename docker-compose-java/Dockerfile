@@ -61,3 +61,14 @@ RUN apk add --no-cache --virtual=build-dependencies wget ca-certificates unzip &
     javac Main.java && \
     java Main && \
     rm -r "/tmp/"*
+RUN apk update && apk add bash
+
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod 777 /entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh"]
+
+#CMD tail -f /dev/null
+CMD ["/bin/bash"]
+
+

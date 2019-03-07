@@ -17,7 +17,7 @@ services:
     build:
       context: docker-compose-java/.
       dockerfile: Dockerfile
-    image: samdavis2/docker-compose-java:j8-1.24.0-rc1
+    image: samdavis2/docker-compose-java:2
     container_name: docker-compose-java
 
 
