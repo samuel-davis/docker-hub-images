@@ -15,10 +15,17 @@ services:
 
   docker-compose-java:
     build:
-      context: docker-compose-java/.
+      context: docker-compose-java-alpine/.
       dockerfile: Dockerfile
     image: samdavis2/docker-compose-java:2.1
     container_name: docker-compose-java
+
+  npm-builder:
+    build:
+      context: node_builder/.
+      dockerfile: Dockerfile
+    image: samdavis2/npm-builder:1.0
+    container_name: npm-builder
 
 
 
