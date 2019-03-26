@@ -22,7 +22,7 @@ services:
 
   npm-builder:
     build:
-      context: node_builder/.
+      context: npm-builder/.
       dockerfile: Dockerfile
     image: samdavis2/npm-builder:1.3
     container_name: npm-builder
