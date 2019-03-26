@@ -50,13 +50,33 @@ ADD google-chrome /opt/google/chrome-unstable/google-chrome-unstable
 RUN chmod 777 /opt/google/chrome-unstable/google-chrome-unstable
 
 #RUN ln -s  /opt/google/chrome-unstable/google-chrome /opt/google/chrome-unstable/google-chrome-unstable
-# Clean Apt Cache and Package Indexes
-RUN apt-get clean && rm -rf /var/lib/apt/lists/*
+
 #RUN useradd -ms /bin/bash jenkins
 #RUN groupadd docker && usermod -aG docker jenkins && usermod -a -G sudo jenkins
 #USER jenkins
 #WORKDIR /home/jenkins
 
+
+#Install Docker
+RUN  apt-get install -yqq \
+        apt-transport-https \
+        ca-certificates \
+        curl \
+        gnupg-agent \
+        software-properties-common
+RUN  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
+RUN add-apt-repository \
+       "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+       $(lsb_release -cs) \
+       stable" && apt update
+RUN apt install -yqq docker-ce docker-ce-cli containerd.io
+RUN npm install -g testcafe
+RUN apt-get install -yqq xvfb x11-xkb-utils xfonts-100dpi xfonts-75dpi xfonts-scalable xfonts-cyrillic x11-apps clang libdbus-1-dev libgtk2.0-dev libnotify-dev libgnome-keyring-dev libgconf2-dev libasound2-dev libcap-dev libcups2-dev libxtst-dev libxss1 libnss3-dev gcc-multilib g++-multilib
+
+
+
+# Clean Apt Cache and Package Indexes
+RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 ENTRYPOINT ["/testcafe-docker.sh"]
 
 
