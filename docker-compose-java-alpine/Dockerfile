@@ -1,17 +1,23 @@
 FROM docker/compose:1.24.0-rc1
 LABEL maintainer="Sam Davis<sam.davis@techngs.com>"
 LABEL site="https://samuel-davis.github.io"
-ENV JAVA_VERSION=8 \
-    JAVA_UPDATE=202 \
-    JAVA_BUILD=08 \
-    JAVA_PATH=1961070e4c9b4e26a04e7f5a083f551e \
-    JAVA_HOME="/usr/lib/jvm/default-jvm"
+ENV JAVA_HOME /usr/lib/jvm/java-1.8-openjdk/jre
+ENV PATH $PATH:/usr/lib/jvm/java-1.8-openjdk/jre/bin:/usr/lib/jvm/java-1.8-openjdk/bin
 
-RUN apk update && apk add --no-cache --virtual=build-dependencies wget ca-certificates bash git unzip openjdk8 && apk del build-dependencies
-
+# Default to UTF-8 file.encoding
+ENV LANG C.UTF-8
+# add a simple script that can auto-detect the appropriate JAVA_HOME value
+# based on whether the JDK or only the JRE is installed
+RUN apk update \
+    && apk add --no-cache \
+    openjdk8-jre \
+    wget \
+    ca-certificates \
+    bash \
+    git \
+    unzip
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod 777 /entrypoint.sh
-
 ENTRYPOINT ["/entrypoint.sh"]
 
 #CMD tail -f /dev/null

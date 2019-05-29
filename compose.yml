@@ -20,12 +20,12 @@ services:
     container_name: docker-compose-java
 
 
-  npm-builder:
-    build:
-      context: npm-builder/.
-      dockerfile: Dockerfile
-    image: samdavis2/npm-builder:${COMPOSE_BUILDER_VERSION:-1.3}
-    container_name: npm-builder
+#  npm-builder:
+#    build:
+#      context: npm-builder/.
+#      dockerfile: Dockerfile
+#    image: samdavis2/npm-builder:${COMPOSE_BUILDER_VERSION:-1.3}
+#    container_name: npm-builder
 
 
 
