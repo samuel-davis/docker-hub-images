@@ -2,7 +2,7 @@ FROM openjdk:8-jre
 LABEL maintainer="Sam Davis<sam.davis@techngs.com>"
 ARG UID=1000
 ARG GID=1000
-ARG NIFI_VERSION=1.9.2
+ARG NIFI_VERSION=${NIFI_VERSION:-${1.9.2}}
 ARG BASE_URL=https://archive.apache.org/dist
 ARG MIRROR_BASE_URL=${MIRROR_BASE_URL:-${BASE_URL}}
 ARG NIFI_BINARY_PATH=${NIFI_BINARY_PATH:-/nifi/${NIFI_VERSION}/nifi-${NIFI_VERSION}-bin.zip}
@@ -48,3 +48,4 @@ RUN echo "#!/bin/sh\n" > $NIFI_HOME/bin/nifi-env.sh
 # Web HTTP(s) & Socket Site-to-Site Ports
 EXPOSE 8080 8443 10000 8000
 ENTRYPOINT ["../scripts/start.sh"]
+LABEL site="https://samuel-davis.github.io"

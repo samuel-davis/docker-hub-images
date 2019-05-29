@@ -4,8 +4,7 @@ services:
     build:
       context: nifi-no-volumes/.
       dockerfile: Dockerfile
-    #image: nfti/nifi:0.1
-    image: samdavis2/nifi-no-volumes:1.10.0
+    image: samdavis2/nifi-no-volumes:${NIFI_VERSION:-${1.9.2}}
     container_name: nifi-no-volumes
     ports:
     - "8080:8080" # User Interface
@@ -13,24 +12,19 @@ services:
     - "8556:8556" # ZeroMq
     - "8000:8000" # Java Debug Port
 
-#  docker-compose-java:
-#    build:
-#      context: docker-compose-java-alpine/.
-#      dockerfile: Dockerfile
-#    image: samdavis2/docker-compose-java:2.2
-#    container_name: docker-compose-java
-#  npm-builder:
-#    build:
-#      context: npm-builder/.
-#      dockerfile: Dockerfile
-#    image: samdavis2/npm-builder:1.3
-#    container_name: npm-builder
-#  felix-runtime:
-#    build:
-#      context: felix-runtime/.
-#      dockerfile: Dockerfile
-#    image: samdavis2/felix-runtime:1.0
-#    container_name: felix-runtime
+  docker-compose-java:
+    build:
+      context: docker-compose-java-alpine/.
+      dockerfile: Dockerfile
+    image: samdavis2/docker-compose-java:${COMPOSE_BUILDER_VERSION:-2.2}
+    container_name: docker-compose-java
+  npm-builder:
+    build:
+      context: npm-builder/.
+      dockerfile: Dockerfile
+    image: samdavis2/npm-builder:${COMPOSE_BUILDER_VERSION:-1.3}
+    container_name: npm-builder
+
 
 
 
