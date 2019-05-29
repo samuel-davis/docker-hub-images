@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-export NIFI_VERSION=1.9.2
+export NIFI_VERSION=1.8.0
 export COMPOSE_BUILDER_VERSION=2.2
 export NPM_BUILDER_VERSION=1.3
 
