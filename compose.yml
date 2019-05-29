@@ -4,7 +4,7 @@ services:
     build:
       context: nifi-no-volumes/.
       dockerfile: Dockerfile
-    image: samdavis2/nifi-no-volumes:${NIFI_VERSION:-${1.9.2}}
+    image: samdavis2/nifi-no-volumes:${NIFI_VERSION:-1.9.2}
     container_name: nifi-no-volumes
     ports:
     - "8080:8080" # User Interface
@@ -18,6 +18,8 @@ services:
       dockerfile: Dockerfile
     image: samdavis2/docker-compose-java:${COMPOSE_BUILDER_VERSION:-2.2}
     container_name: docker-compose-java
+
+
   npm-builder:
     build:
       context: npm-builder/.
