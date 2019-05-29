@@ -15,13 +15,12 @@ wget http://central.maven.org/maven2/org/apache/aries/proxy/org.apache.aries.pro
 wget http://central.maven.org/maven2/org/slf4j/slf4j-api/1.7.26/slf4j-api-1.7.26.jar && \
 wget http://central.maven.org/maven2/org/slf4j/slf4j-simple/1.7.26/slf4j-simple-1.7.26.jar && \
 wget http://central.maven.org/maven2/org/osgi/org.osgi.service.http/1.2.1/org.osgi.service.http-1.2.1.jar && \
-wget http://central.maven.org/maven2/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar && \
+wget http://central.maven.org/maven2/javax/servlet/servlet-api/2.5/servlet-api-2.5.jar && \
 wget http://central.maven.org/maven2/org/apache/felix/org.apache.felix.scr/2.1.16/org.apache.felix.scr-2.1.16.jar && \
 wget http://central.maven.org/maven2/org/osgi/org.osgi.util.promise/1.1.1/org.osgi.util.promise-1.1.1.jar && \
 wget http://central.maven.org/maven2/org/osgi/org.osgi.compendium/5.0.0/org.osgi.compendium-5.0.0.jar && \
 wget http://central.maven.org/maven2/org/osgi/org.osgi.util.function/1.1.0/org.osgi.util.function-1.1.0.jar && \
 wget http://central.maven.org/maven2/org/apache/felix/org.apache.felix.dependencymanager/4.6.0/org.apache.felix.dependencymanager-4.6.0.jar && \
-wget https://repo1.maven.org/maven2/org/apache/felix/org.apache.felix.webconsole/4.3.4/org.apache.felix.webconsole-4.3.4-all.jar && \
 wget http://central.maven.org/maven2/org/apache/felix/org.apache.felix.scr/2.1.16/org.apache.felix.scr-2.1.16.jar && \
 wget http://central.maven.org/maven2/org/apache/felix/org.apache.felix.configadmin/1.9.14/org.apache.felix.configadmin-1.9.14.jar && \
 wget http://central.maven.org/maven2/org/apache/felix/org.apache.felix.eventadmin/1.5.0/org.apache.felix.eventadmin-1.5.0.jar && \
@@ -30,5 +29,9 @@ wget http://central.maven.org/maven2/org/apache/felix/org.apache.felix.log/1.2.0
 wget http://central.maven.org/maven2/org/apache/felix/org.apache.felix.http.jetty/4.0.8/org.apache.felix.http.jetty-4.0.8.jar && \
 wget http://central.maven.org/maven2/org/apache/felix/org.apache.felix.http.servlet-api/1.1.2/org.apache.felix.http.servlet-api-1.1.2.jar && \
 wget http://central.maven.org/maven2/org/apache/felix/org.apache.felix.http.whiteboard/4.0.0/org.apache.felix.http.whiteboard-4.0.0.jar && \
+wget http://central.maven.org/maven2/org/apache/felix/org.apache.felix.webconsole/4.3.8/org.apache.felix.webconsole-4.3.8.jar && \
+wget http://central.maven.org/maven2/commons-io/commons-io/2.6/commons-io-2.6.jar && \
+wget http://central.maven.org/maven2/commons-fileupload/commons-fileupload/1.4/commons-fileupload-1.4.jar && \
+wget http://central.maven.org/maven2/org/apache/felix/org.apache.felix.inventory/1.0.6/org.apache.felix.inventory-1.0.6.jar && \
 wget http://central.maven.org/maven2/org/apache/felix/org.apache.felix.webconsole.plugins.ds/2.1.0/org.apache.felix.webconsole.plugins.ds-2.1.0.jar && \
 wget http://central.maven.org/maven2/org/apache/felix/org.apache.felix.webconsole.plugins.event/1.1.8/org.apache.felix.webconsole.plugins.event-1.1.8.jar
