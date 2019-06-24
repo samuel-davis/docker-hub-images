@@ -15,7 +15,10 @@ RUN apk update \
     ca-certificates \
     bash \
     git \
-    unzip
+    unzip \
+    ffmpeg \
+    libva-intel-driver
+
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod 777 /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
