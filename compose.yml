@@ -1,20 +1,26 @@
 version: "3.7"
 services:
-  nifi-no-volumes:
-    build:
-      context: nifi-no-volumes/.
-      dockerfile: Dockerfile
-    image: samdavis2/nifi-no-volumes:${NIFI_VERSION:-1.9.2}
-    container_name: nifi-no-volumes
-    ports:
-    - "8080:8080" # User Interface
-    - "9500:9500" #Requests
-    - "8556:8556" # ZeroMq
-    - "8000:8000" # Java Debug Port
+#  nifi-no-volumes:
+#    build:
+#      context: nifi-no-volumes/.
+#      dockerfile: Dockerfile
+#    image: samdavis2/nifi-no-volumes:${NIFI_VERSION:-1.9.2}
+#    container_name: nifi-no-volumes
+#    ports:
+#    - "8080:8080" # User Interface
+#    - "9500:9500" #Requests
+#    - "8556:8556" # ZeroMq
+#    - "8000:8000" # Java Debug Port
 
   docker-compose-java:
     build:
       context: docker-compose-java-alpine/.
+      dockerfile: Dockerfile
+    image: samdavis2/docker-compose-java:${COMPOSE_BUILDER_VERSION:-2.2}
+    container_name: docker-compose-java
+  docker-compose-java-di2e:
+    build:
+      context: docker-compose-java-alpine_di2e/.
       dockerfile: Dockerfile
     image: samdavis2/docker-compose-java:${COMPOSE_BUILDER_VERSION:-2.2}
     container_name: docker-compose-java

@@ -213,3 +213,5 @@ Temporary Items
 /docker/dev_dir/*
 !/docker/dev_dir/empty.txt
 reference/
+/docker-compose-java-alpine/no_git/
+/docker-compose-java-alpine_di2e/

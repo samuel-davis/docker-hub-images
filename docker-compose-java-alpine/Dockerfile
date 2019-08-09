@@ -31,11 +31,8 @@ RUN apk update \
         && echo "export LANG=C.UTF-8" > /etc/profile.d/locale.sh \
         && /usr/glibc-compat/sbin/ldconfig /lib /usr/glibc-compat/lib \
         && mkdir -p /opt/jdk
-
-
 #COPY ./setup.sh /setup.sh
 COPY --from=anapsix/alpine-java:8_jdk /opt/jdk /opt/jdk
-
 WORKDIR /app
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod 777 /entrypoint.sh
